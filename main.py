@@ -1,17 +1,75 @@
-calories = {
-   'Hamburger': 600,
-   'Cheese Burger': 750,
-   'Veggie Burger': 400,
-   'Vegan Burger': 350,
-   'Sweet Potatoes': 230,
-   'Salad': 15,
-   'Iced Tea': 70,
-   'Lemonade': 90,
-}
+meals = [
+    {
+        "id": "meal-1",
+        "name": "hamburger",
+        "calories": 600,
+        "price": 5
+    },
+    {
+        "id": "meal-2",
+        "name": "cheese burger",
+        "calories": 750,
+        "price": 7},
+    {
+        "id": "meal-3",
+        "name": "veggie burger",
+        "calories": 400,
+        "price": 6},
+    {
+        "id": "meal-4",
+        "name": "vegan burger",
+        "calories": 350,
+        "price": 6},
+    {
+        "id": "meal-5",
+        "name": "sweet potatoes",
+        "calories": 230,
+        "price": 3},
+    {
+        "id": "meal-6",
+        "name": "salad",
+        "calories": 15,
+        "price": 4},
+    {
+        "id": "meal-7",
+        "name": "iced tea",
+        "calories": 70,
+        "price": 2},
+    {
+        "id": "meal-8",
+        "name": "lemonade",
+        "calories": 90,
+        "price": 2
+    },
+]
+
+combos = [
+    {
+        "id": "combo-1",
+        "name": "cheesy combo",
+        "meals": ["meal-2", "meal-5", "meal-8"],
+        "price": 11,
+    },
+    {
+        "id": "combo-2",
+        "name": "veggie combo",
+        "meals": ["meal-3", "meal-5", "meal-7"],
+        "price": 10,
+    },
+    {
+        "id": "combo-3",
+        "name": "vegan combo",
+        "meals": ["meal-4", "meal-6", "meal-8"],
+        "price": 10,
+    },
+
+]
+
 combos = {
-    "Cheesy Combo" : ["Cheese Burger", "Sweet Potatoes", "Lemonade"],
-    "Veggie Combo" : ["Veggie Burger", "Sweet Potatoes", "Iced Tea"],
-    "Vegan Combo" : ["Vegan Burger", "Salad", "Lemonade"],
+    combo['id']: {'type': 'combo', **combo} for combo in combos
+}
+meals = {
+    meal['id']: {'type': 'meal', **meal} for meal in meals
 }
 
 class MealTooBigError(Exception):
@@ -21,25 +79,13 @@ class MealTooBigError(Exception):
         self.message = 'Your meal contains ' + str(calories) + ' calories. That\'s more than 2000!'
         super().__init__(self.message)
 
-def count_calories(*args):
-    total_calories = 0;
-    for meal in args:
-        if calories.get(meal):
-            total_calories += calories.get(meal)
-        elif (combos.get(meal)):
-            for submeal in combos.get(meal):
-                total_calories += calories.get(submeal)
-        else:
-            print('This item is not on the menu!')
-    return total_calories
-
 def count_recursive(menu_order, i, total_calories):
     meal = menu_order[i]
-    if calories.get(meal):
-        total_calories += calories.get(meal)
+    if meals.get(meal):
+        total_calories += meals.get(meal).get('calories')
     elif (combos.get(meal)):
-        for submeal in combos.get(meal):
-            total_calories += calories.get(submeal)
+        for submeal in combos.get(meal).get('meals'):
+            total_calories += meals.get(submeal).get('calories')
     else:
         print(meal + ' is not on the menu!')
     if i+1 < len(menu_order):
@@ -49,7 +95,4 @@ def count_recursive(menu_order, i, total_calories):
             raise MealTooBigError(total_calories)
         print(total_calories)
 
-count_recursive(['Cheesy Combo', 'Cheesy Combo'], i=0, total_calories=0)
-
-
-
+count_recursive(['meal-1', 'combo-1', 'meal-8'], i=0, total_calories=0)

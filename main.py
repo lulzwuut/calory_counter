@@ -79,7 +79,7 @@ class MealTooBigError(Exception):
         self.message = 'Your meal contains ' + str(calories) + ' calories. That\'s more than 2000!'
         super().__init__(self.message)
 
-def count_recursive(menu_order, i, total_calories):
+def count_calories(menu_order, i, total_calories):
     meal = menu_order[i]
     if meals.get(meal):
         total_calories += meals.get(meal).get('calories')
@@ -89,10 +89,25 @@ def count_recursive(menu_order, i, total_calories):
     else:
         print(meal + ' is not on the menu!')
     if i+1 < len(menu_order):
-        count_recursive(menu_order, i+1, total_calories)
+        count_calories(menu_order, i+1, total_calories)
     else:
         if (total_calories > 2000):
             raise MealTooBigError(total_calories)
         print(total_calories)
 
-count_recursive(['meal-1', 'combo-1', 'meal-8'], i=0, total_calories=0)
+def count_price(menu_order, i, total_price):
+    meal = menu_order[i]
+    if meals.get(meal):
+        total_price += meals.get(meal).get('price')
+    elif (combos.get(meal)):
+        for submeal in combos.get(meal).get('meals'):
+            total_price += meals.get(submeal).get('price')
+    else:
+        print(meal + ' is not on the menu!')
+    if i+1 < len(menu_order):
+        count_price(menu_order, i+1, total_price)
+    else:
+        print(total_price)
+
+count_calories(['meal-1', 'combo-1', 'meal-8'], i=0, total_calories=0)
+count_price(['meal-1', 'combo-1', 'meal-8'], i=0, total_price=0)

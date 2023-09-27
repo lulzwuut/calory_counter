@@ -1,0 +1,27 @@
+{
+    "orders": [
+        {"items": ["meal-1", "meal-2", "meal-3"], "date": "01-jan-2023"},
+        {"items": ["combo-1"], "date": "01-jan-2023"},
+        {"items": ["combo-2", "meal-5"], "date":"01-jan-2023"},
+        {"items": ["meal-1", "meal-2", "meal-3"], "date": "01-jan-2023"},
+        {"items": ["combo-1"], "date": "02-jan-2023"},
+        {"items": ["combo-2", "meal-5"], "date":"02-jan-2023"},
+        {"items": ["meal-1", "meal-2", "meal-3"], "date": "03-jan-2023"},
+        {"items": ["combo-1"], "date": "03-jan-2023"},
+        {"items": ["combo-2", "meal-5"], "date":"03-jan-2023"},
+        {"items": ["meal-1", "meal-2", "meal-3"], "date": "04-jan-2023"},
+        {"items": ["combo-1"], "date": "04-jan-2023"},
+        {"items": ["combo-2", "meal-5"], "date":"04-jan-2023"},
+        {"items": ["meal-1", "meal-2", "meal-3"], "date": "05-jan-2023"},
+        {"items": ["combo-1"], "date": "05-jan-2023"},
+        {"items": ["combo-2", "meal-5"], "date":"05-jan-2023"},
+        {"items": ["meal-1", "meal-2", "meal-3"], "date": "06-jan-2023"},
+        {"items": ["combo-1"], "date": "06-jan-2023"},
+        {"items": ["combo-2", "meal-5"], "date":"06-jan-2023"},
+        {"items": ["meal-1", "meal-2", "meal-3"], "date": "07-jan-2023"},
+        {"items": ["combo-1"], "date": "07-jan-2023"},
+        {"items": ["combo-2", "meal-5"], "date":"07-jan-2023"},
+        {"items": ["meal-1", "meal-2", "meal-3"], "date": "08-jan-2023"},
+        {"items": ["combo-1"], "date": "08-jan-2023"}
+    ]
+}

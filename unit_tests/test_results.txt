@@ -1,0 +1,11 @@
+test_calory_counter_combo (order_class_and_unittest.MyTestCase) ... ok
+test_calory_counter_single (order_class_and_unittest.MyTestCase) ... ok
+test_item_not_on_menu (order_class_and_unittest.MyTestCase) ... ok
+test_meal_too_big (order_class_and_unittest.MyTestCase) ... ok
+test_price_counter_combo (order_class_and_unittest.MyTestCase) ... ok
+test_price_counter_single (order_class_and_unittest.MyTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK

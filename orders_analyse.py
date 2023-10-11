@@ -89,20 +89,25 @@ order_objects = []  # List to store the created Order objects
 items_list = []     # List to sttore all the ordered items to analyse their "popularity" for the last part
 for order in data['orders']:
     # Append all the Order objects to the list
-    order_objects.append(order_class_and_unittest.Order(order['items'], order['date']))    
-    # Create a simple list enumerating all ordered meals/combos  
-    items_list.extend(order['items'])                                                       
+    order_objects.append(order_class_and_unittest.Order(order['items'], order['date']))
+    # Create a simple list enumerating all ordered meals/combos
+    items_list.extend(order['items'])
 
 df = pd.DataFrame()
 
 # Create a dataframe that contains the all Object attributes as separate columns for each order as separate row
 for i in range(len(order_objects)):
     order_object = order_objects[i]
-    d = {'order_id': str(order_object.order_id), 'order_accepted': order_object.order_accepted, 'order_refused_reason': order_object.order_refused_reason, 'date': order_object.date, 'items': order_object.items, 'calories': order_object.calories, 'price': order_object.price}
-    df = df.append(d, ignore_index = True)
+    d = {'order_id': str(order_object.order_id),
+         'order_accepted': order_object.order_accepted,
+         'order_refused_reason': order_object.order_refused_reason,
+         'date': order_object.date, 'items': order_object.items,
+         'calories': order_object.calories,
+         'price': order_object.price}
+    df = df.append(d, ignore_index=True)
 
 # Plot the three plots in one figure
-fig, (ax1, ax2, ax3) = plt.subplots(3,1, sharey=False, sharex=False)
+fig, (ax1, ax2, ax3) = plt.subplots(3, 1, sharey=False, sharex=False)
 
 # - Total calories per day
 dates = df['date'].unique()

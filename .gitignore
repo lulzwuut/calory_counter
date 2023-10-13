@@ -1,2 +1,6 @@
 .gitattributes
 venv/
+__pycache__
+orders/__pycache__
+orders/tests/__pycache__
+.vscode

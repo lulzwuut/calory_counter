@@ -1,0 +1,52 @@
+
+**********************************************************************
+Test run on: 2023-10-13 12:42:21.029394
+test_calory_counter_combo (__main__.MyTestCase) ... ok
+test_calory_counter_single (__main__.MyTestCase) ... ok
+test_item_not_on_menu (__main__.MyTestCase) ... ok
+test_price_counter_combo (__main__.MyTestCase) ... ok
+test_price_counter_single (__main__.MyTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+OK
+
+**********************************************************************
+Test run on: 2023-10-13 12:42:33.111301
+test_calory_counter_combo (orders.tests.test_classes.MyTestCase) ... ok
+test_calory_counter_single (orders.tests.test_classes.MyTestCase) ... ok
+test_item_not_on_menu (orders.tests.test_classes.MyTestCase) ... ok
+test_price_counter_combo (orders.tests.test_classes.MyTestCase) ... ok
+test_price_counter_single (orders.tests.test_classes.MyTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
+
+**********************************************************************
+Test run on: 2023-10-13 12:43:26.943756
+test_calory_counter_combo (orders.tests.test_classes.MyTestCase) ... ok
+test_calory_counter_single (orders.tests.test_classes.MyTestCase) ... ok
+test_item_not_on_menu (orders.tests.test_classes.MyTestCase) ... ok
+test_price_counter_combo (orders.tests.test_classes.MyTestCase) ... ok
+test_price_counter_single (orders.tests.test_classes.MyTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
+
+**********************************************************************
+Test run on: 2023-10-13 15:29:59.718236
+test_calory_counter_combo (orders.tests.test_classes.MyTestCase) ... ok
+test_calory_counter_single (orders.tests.test_classes.MyTestCase) ... ok
+test_item_not_on_menu (orders.tests.test_classes.MyTestCase) ... ok
+test_price_counter_combo (orders.tests.test_classes.MyTestCase) ... ok
+test_price_counter_single (orders.tests.test_classes.MyTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
